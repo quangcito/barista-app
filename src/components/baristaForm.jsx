@@ -1,6 +1,6 @@
 import React, {Component, useState} from "react";
 import RecipeChoices from "./recipeChoices";
-import drinksJson from "./assets/drinks.json"
+import drinksJson from "../assets/drinks.json"
 
 const BaristaForm = () => {
 
@@ -47,6 +47,16 @@ const BaristaForm = () => {
   return (
     <div>
       <h2>Hi, I'd like to order a:</h2>
+      <div className="drink-container">
+        <h2 className="mini-header">{currentDrink}</h2>
+        <button
+          type="new-drink-button"
+          className="button newdrink"
+          onClick={onNewDrink}
+        >
+          🔄
+        </button>
+      </div>
       <form>
 
         <h3>Temperature</h3>
