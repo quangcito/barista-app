@@ -51,6 +51,22 @@ const BaristaForm = () => {
   }
 
   const onCheckAnswer = () => {
+    if (!ingredients['temperature'].includes(inputs['temperature'])) {
+      alert("For temperature, that isn't even an option!")
+    }
+
+    if (!ingredients['syrup'].includes(inputs['syrup'])) {
+      alert("For syrup, that isn't even an option!")
+    }
+
+    if (!ingredients['milk'].includes(inputs['milk'])) {
+      alert("For milk, that isn't even an option!")
+    }
+
+    if (!ingredients['blended'].includes(inputs['blended'])) {
+      alert("For blended, that isn't even an option!")
+    }
+    
     if (trueRecipe.temp != inputs['temperature']) {
       setCheckedTemperature('wrong');
     }
@@ -108,7 +124,7 @@ const BaristaForm = () => {
                       }))}
             label="temperature"
             choices={ingredients["temperature"]}
-            checked={inputs["temperature"]}
+            currentVal={inputs["temperature"]}
           />
         </div>
 
@@ -124,7 +140,7 @@ const BaristaForm = () => {
                       }))}
             label="syrup"
             choices={ingredients["syrup"]}
-            checked={inputs["syrup"]}
+            currentVal={inputs["syrup"]}
           />
         </div>
 
@@ -140,7 +156,7 @@ const BaristaForm = () => {
                       }))}
             label="milk"
             choices={ingredients["milk"]}
-            checked={inputs["milk"]}
+            currentVal={inputs["milk"]}
           />
         </div>
 
@@ -156,7 +172,7 @@ const BaristaForm = () => {
                       }))}
             label="blended"
             choices={ingredients["blended"]}
-            checked={inputs["blended"]}
+            currentVal={inputs["blended"]}
           />
         </div>
 
