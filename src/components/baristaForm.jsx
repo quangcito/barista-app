@@ -15,7 +15,7 @@ const BaristaForm = () => {
 
     'milk': ['cow', 'oat', 'goat', 'almond', 'none'],
 
-    'blender': ['yes', 'turbo', 'no']
+    'blended': ['yes', 'turbo', 'no']
   }
 
   const onNewDrink = () => {
@@ -73,18 +73,18 @@ const BaristaForm = () => {
           checked={inputs["milk"]}
         />
 
-        <h3>Blender</h3>
+        <h3>Blended</h3>
         <div className="answer-space" >
-          {inputs["blender"]}
+          {inputs["blended"]}
         </div>
         <RecipeChoices
           handleChange={(e) => setInputs((prevState) => ({
                       ...prevState,
                       [e.target.name]: e.target.value,
                     }))}
-          label="blender"
-          choices={ingredients["blender"]}
-          checked={inputs["blender"]}
+          label="blended"
+          choices={ingredients["blended"]}
+          checked={inputs["blended"]}
         />
 
       </form>
