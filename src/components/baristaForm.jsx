@@ -1,7 +1,12 @@
 import React, {Component, useState} from "react";
 import RecipeChoices from "./recipeChoices";
+import drinksJson from "./assets/drinks.json"
 
 const BaristaForm = () => {
+
+  const [currentDrink, setCurrentDrink] = useState('');
+  const [trueRecipe, setTrueRecipe] = useState({});
+
   const [inputs, setInputs] = useState({
     'temperature': '',
     'milk': '',
@@ -19,8 +24,21 @@ const BaristaForm = () => {
   }
 
   const onNewDrink = () => {
+    setInputs({
+      'temperature': '',
+      'milk': '',
+      'syrup': '',
+      'blended': '' });
 
+    getNextDrink();
   };
+
+  const getNextDrink = () => {
+    let randomDrinkIndex = Math.floor(Math.random() * drinksJson.drinks.length);
+
+    setCurrentDrink(drinksJson.drinks[randomDrinkIndex].name);
+    setTrueRecipe(drinksJson.drinks[randomDrinkIndex].ingredients);
+  }
 
   const onCheckAnswer = () => {
 
